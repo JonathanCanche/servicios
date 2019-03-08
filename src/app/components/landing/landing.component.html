@@ -1,0 +1,225 @@
+<div class="" *ngIf="show; else loading ">
+<!--==========================
+  Header
+  ============================-->
+  <header id="header" class="fixed-top">
+    <div class="container">
+
+      <div class="logo float-left">
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <h1 class="text-light"><a href="#header"><span>NewBiz</span></a></h1> -->
+        <a href="#intro" class="scrollto"><img src="{{data.secciones.home.logo}}" alt="" class="img-fluid"></a>
+      </div>
+
+      <nav class="main-nav float-right d-none d-lg-block">
+        <ul>
+          <li class="active"><a (click)="scrollToElement(home)">{{data.secciones.home.navbar}}</a></li>
+          <li><a (click)="scrollToElement(about)">{{data.secciones.about.navbar}}</a></li>
+          <li><a (click)="scrollToElement(servicios)">{{data.secciones.servicios.navbar}}</a></li>
+          <li><a (click)="scrollToElement(portafolio)">{{data.secciones.portafolio.navbar}}</a></li>
+          <li><a (click)="scrollToElement(contacto)">{{data.secciones.contacto.navbar}}</a></li>
+        </ul>
+      </nav><!-- .main-nav -->
+      
+    </div>
+  </header>
+  <!-- #header -->
+
+  <!--==========================
+    Intro Section
+  ============================-->
+  <section #home id="intro" class="clearfix">
+    <div class="container">
+
+      <div class="intro-img">
+        <img src="{{data.secciones.home.imagen}}" alt="" class="img-fluid">
+      </div>
+
+      <div class="intro-info">
+        <h2>{{data.secciones.home.titulo}}</h2>
+      </div>
+
+    </div>
+  </section><!-- #intro -->
+
+  <main id="main">
+
+    <!--==========================
+      About Us Section
+    ============================-->
+    <section #about id="about">
+      <div class="container">
+
+        <header class="section-header">
+          <h3>{{data.secciones.about.titulo}}</h3>
+          <p>{{data.secciones.about.descripcion}}</p>
+        </header>
+
+        <div class="row about-container">
+
+          <div class="col-lg-6 content order-lg-1 order-2">
+            <p>{{data.secciones.about.Sdescripcion}}</p>
+            <div *ngFor="let landing of data.secciones.about.caracteristicas" 
+            class="icon-box wow fadeInUp">
+              <div class="icon"><img src="{{landing.imagen}}" alt="" /></div>
+              <h4 class="title"><a href="">{{landing.titulo}}</a></h4>
+              <p class="description">{{landing.descripcion}}</p>
+            </div>
+          </div>
+
+          <div class="col-lg-6 background order-lg-2 order-1 wow fadeInUp">
+            <img src="{{data.secciones.about.imagen}}" class="img-fluid" alt="">
+          </div>
+        </div>
+
+        <div *ngFor="let landing of data.secciones.about.nosotros"
+        class="row about-extra">
+          <div class="col-lg-6 wow fadeInUp">
+            <img src="{{landing.imagen}}" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-6 wow fadeInUp pt-5 pt-lg-0">
+            <h4>{{landing.titulo}}</h4>
+            <p>{{landing.descripcion}}</p>
+          </div>
+        </div>
+      </div>
+    </section><!-- #about -->
+
+    <!--==========================
+      Services Section
+    ============================-->
+    <section #servicios id="services" class="section-bg">
+      <div class="container">
+
+        <header class="section-header">
+          <h3>{{data.secciones.servicios.titulo}}</h3>
+          <p>{{data.secciones.servicios.descripcion}}</p>
+        </header>
+
+        <div class="row">
+
+          <div *ngFor="let landing of data.secciones.servicios.servicio"
+          class="col-md-6 col-lg-5 offset-lg-1 wow bounceInUp" data-wow-duration="1.4s">
+            <div class="box">
+              <div class="icon"><img src="{{landing.imagen}}" alt="" /></div>
+              <h4 class="title"><a href="">{{landing.titulo}}</a></h4>
+              <p class="description">{{landing.descripcion}}</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- #services -->
+
+    <!--==========================
+      Why Us Section
+    ============================-->
+    <section id="why-us" class="wow fadeIn">
+      <div class="container">
+        <header class="section-header">
+          <h3>{{data.secciones.banner.titulo}}</h3>
+          <p>{{data.secciones.banner.descripcion}}</p>
+        </header>
+
+        <div class="row row-eq-height justify-content-center">
+
+          <div *ngFor="let landing of data.secciones.banner.cuadroInfo" 
+          class="col-lg-4 mb-4">
+            <div class="card wow bounceInUp">
+              <div class="icon"><img src="{{landing.imagen}}" alt="" /></div>
+              <div class="card-body">
+                <h5 class="card-title">{{landing.titulo}}</h5>
+                <p class="card-text">{{landing.descripcion}}</p>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--==========================
+      Portfolio Section
+    ============================-->
+    <section #portafolio id="portfolio" class="clearfix">
+      <div class="container">
+
+        <header class="section-header">
+          <h3 class="section-title">{{data.secciones.portafolio.titulo}}</h3>
+        </header>
+
+        <div class="row">
+        </div>
+
+        <div class="row portfolio-container">
+
+          <div *ngFor="let landing of data.secciones.portafolio.imagenes"
+          class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <div class="portfolio-wrap">
+              <img src="{{landing.imagen}}" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4><a href="#">{{landing.titulo}}</a></h4>
+                <p>{{landing.subtitulo}}</p>
+                <div>
+                  <a href="{{landing.imagen}}" data-lightbox="portfolio" data-title="App 1" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- #portfolio -->
+    <section #contacto id="contact">
+      <div class="container-fluid">
+
+        <div class="section-header">
+          <h3>{{data.secciones.contacto.titulo}}</h3>
+        </div>
+
+        <div class="row wow fadeInUp">
+          <div class="col-lg-12">
+            <div class="row">
+              <div class="col-md-4 info">
+                <i class="ion-ios-location-outline"></i>
+                <p>{{data.secciones.contacto.lugar}}</p>
+              </div>
+              <div class="col-md-4 info">
+                <i class="ion-ios-email-outline"></i>
+                <p>{{data.secciones.contacto.email}}</p>
+              </div>
+              <div class="col-md-4 info">
+                <i class="ion-ios-telephone-outline"></i>
+                <p>{{data.secciones.contacto.telefono}}</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- #contact -->
+
+  </main>
+
+  <!--==========================
+    Footer
+  ============================-->
+  <footer id="footer">
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong>NewBiz</strong>. All Rights Reserved
+      </div>
+      <div class="credits"> Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+  </footer>
+  <!-- #footer -->
+
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+  <!-- Uncomment below i you want to use a preloader -->
+  <!-- <div id="preloader"></div> -->
+</div>
+<ng-template #loading>
+  <app-loader></app-loader>
+</ng-template>
