@@ -1186,7 +1186,7 @@ h6 {
 
 #footer {
   background: #00428a;
-  padding: 0 0 30px 0;
+  padding:30px 0;
   color: #eee;
   font-size: 14px;
 }
@@ -1411,3 +1411,28 @@ h6 {
     padding: 100px 0 20px 0;
   }
 }
+
+.mobile-nav-toggle {
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 9998;
+  border: 0;
+  background: none;
+  font-size: 24px;
+  transition: all 0.4s;
+  outline: none !important;
+  line-height: 1;
+  cursor: pointer;
+  text-align: right;
+}
+@media (min-width: 992px){
+.d-lg-none {
+    display: none!important;
+ }
+}
+[type=button], [type=reset], [type=submit], button {
+  -webkit-appearance: button;
+}
+
+
