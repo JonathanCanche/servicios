@@ -2,17 +2,38 @@
 <!--==========================
   Header
   ============================-->
-
-  <button type="button" class="mobile-nav-toggle d-lg-none"><i class="fa fa-bars"></i></button>
-
-  
-
   <header id="header" class="fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand nav-margin" (click)="scrollToElement(home,'home')">{{id | uppercase}}</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" #buttonmenu>
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end nav-margin-right" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li #home_li class="nav-item active">
+          <a class="nav-link" (click)="scrollToElement(home,'home')">Inicio</a>
+        </li>
+        <li #about_li class="nav-item">
+          <a class="nav-link" (click)="scrollToElement(about,'about')">Nosotros</a>
+        </li>
+        <li #servicios_li class="nav-item">
+            <a class="nav-link" (click)="scrollToElement(servicios,'servicios')">Servicios</a>
+        </li>
+        <li #portafolio_li class="nav-item">
+            <a class="nav-link" (click)="scrollToElement(portafolio,'portafolio')">Portafolio</a>
+        </li>
+        <li #contact_li class="nav-item">
+            <a class="nav-link" (click)="scrollToElement(contacto,'contact')">Contacto</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  </header>
+  <!-- <header id="header" class="fixed-top">
     <div class="container">
 
       <div class="logo float-left">
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <h1 class="text-light"><a href="#header"><span>NewBiz</span></a></h1> -->
+        
         <a href="#intro" class="scrollto"><img src="{{data.secciones.home.logo}}" alt="" class="img-fluid"></a>
       </div>
 
@@ -24,10 +45,10 @@
           <li #portafolio_li><a (click)="scrollToElement(portafolio,'portafolio')">Portafolio</a></li>
           <li #contact_li><a (click)="scrollToElement(contacto,'contact')">Contacto</a></li>
         </ul>
-      </nav><!-- .main-nav -->
+      </nav>
       
     </div>
-  </header>
+  </header> -->
   <!-- #header -->
 
   <!--==========================
@@ -66,7 +87,9 @@
             <p>{{data.secciones.about.Sdescripcion}}</p>
             <div *ngFor="let landing of data.secciones.about.caracteristicas" 
             class="icon-box wow fadeInUp">
-              <div class="icon"><img src="{{landing.imagen}}" alt="" /></div>
+              <div class="icon">
+                  <i class="fas fa-chevron-right"></i>
+              </div>
               <h4 class="title"><a href="">{{landing.titulo}}</a></h4>
               <p class="description">{{landing.descripcion}}</p>
             </div>
@@ -78,11 +101,11 @@
         </div>
 
         <div *ngFor="let landing of data.secciones.about.nosotros"
-        class="row about-extra">
+        class="row about-extra ">
           <div class="col-lg-6 wow fadeInUp">
             <img src="{{landing.imagen}}" class="img-fluid" alt="">
           </div>
-          <div class="col-lg-6 wow fadeInUp pt-5 pt-lg-0">
+          <div class="col-lg-6 wow fadeInUp pt-5 pt-lg-0 d-flex justify-content-center flex-column">
             <h4>{{landing.titulo}}</h4>
             <p>{{landing.descripcion}}</p>
           </div>
@@ -106,7 +129,7 @@
           <div *ngFor="let landing of data.secciones.servicios.servicio"
           class="col-md-6 col-lg-5 offset-lg-1 wow bounceInUp" data-wow-duration="1.4s">
             <div class="box">
-              <div class="icon"><img src="{{landing.imagen}}" alt="" /></div>
+                <div class="icon"><i class="ion-ios-checkmark-outline" style="color: #ff689b;"></i></div>
               <h4 class="title"><a href="">{{landing.titulo}}</a></h4>
               <p class="description">{{landing.descripcion}}</p>
             </div>
@@ -131,7 +154,7 @@
           <div *ngFor="let landing of data.secciones.banner.cuadroInfo" 
           class="col-lg-4 mb-4">
             <div class="card wow bounceInUp">
-              <div class="icon"><img src="{{landing.imagen}}" alt="" /></div>
+              <div class="icon"><i class="fa fa-gem"></i></div>
               <div class="card-body">
                 <h5 class="card-title">{{landing.titulo}}</h5>
                 <p class="card-text">{{landing.descripcion}}</p>
@@ -217,7 +240,7 @@
   </footer>
   <!-- #footer -->
 
-  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+  <a (click)="scrollToElement(home,'home',false)" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
   <!-- Uncomment below i you want to use a preloader -->
   <!-- <div id="preloader"></div> -->
 </div>
