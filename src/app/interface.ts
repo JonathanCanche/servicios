@@ -37,7 +37,7 @@ export interface WebData{
         portafolio:{
             navbar:string;
             titulo:string;
-            imagenes:Array<{imagen:string,titulo:string,subtitulo:string}>;
+            imagenes:Array<{imagen:string,titulo:string,descripcion:string}>;
         }
 
         contacto:{
