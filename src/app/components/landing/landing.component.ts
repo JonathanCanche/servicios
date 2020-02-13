@@ -27,6 +27,7 @@ export class LandingComponent implements OnInit {
     @ViewChild('about_li') aboutLi: ElementRef;
     @ViewChild('contact_li') contactLi: ElementRef;
     @ViewChild('portafolio_li') portafolioli: ElementRef;
+
   constructor(private afs: AngularFirestore, private router: Router, private routes: ActivatedRoute) {
 
     this.itemDoc = afs.doc<WebData>('webs/pruebaservicios');
@@ -48,7 +49,7 @@ export class LandingComponent implements OnInit {
           this.router.navigateByUrl('/404');
         } else {
           this.data = data;
-          console.log(this.data);
+          // console.log(this.data);
           this.show = true;
         }
       });

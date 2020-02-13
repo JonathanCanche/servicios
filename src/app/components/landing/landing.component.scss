@@ -6,6 +6,9 @@ div.footer-container{
       flex-direction: column;
     }
 }
+.navbar-ex{
+  background: white!important;
+}
 div.pyme {
     // background: rgba(255,255,255,0.6); /* Old browsers */
     display: flex;
@@ -49,4 +52,29 @@ div.pyme {
       margin-right: 20%
     }
   }
-  
+
+  .icons-social{
+    display: flex;
+    justify-content: center;
+
+    :hover{
+      
+      color: #004289!important;
+      font-size: 32.5px!important;
+    }
+
+    .item-social{
+      margin-right: 20px;
+    }
+  }
+
+.img-portafolio{
+  height: 200px;
+  width: 300px;
+  object-fit: cover;
+}
+
+.item-portafolio{
+  text-align: -webkit-center;
+}
+

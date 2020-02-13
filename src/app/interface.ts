@@ -46,6 +46,9 @@ export interface WebData{
             telefono:string;
             email:string;
             lugar:string;
+            twitter:string;
+            facebook:string;
+            instagram:string;
         }
     }
 }
